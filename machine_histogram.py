@@ -20,7 +20,7 @@ histogram = []
 reader = csv.reader(sys.stdin)
 for row in reader:
    if int(row[0]) > current_timestamp:
-      if timestamps_see % timestamp_record_rate == 0:
+      if timestamps_seen % timestamp_record_rate == 0:
          histogram.append(current_sum)
       current_timestamp = int(row[0])
       timestamps_seen += 1
